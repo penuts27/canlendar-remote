@@ -141,7 +141,7 @@ let monthData = ["January", "February", "March", "April", "May", "June", "July",
                 let td = document.getElementById(`${x.year}-${x.month+1}-${x.date}`)
                 // console.log("td",td)
                 let tdbody = td.querySelector(".daygrid-day-events")
-                if (tdbody!=null){
+                if (tdbody !== null){
                     let newItem = `
                     <div class="daygrid-event">
                         <div class="daygrid-event-dot"></div>
@@ -200,7 +200,7 @@ let monthData = ["January", "February", "March", "April", "May", "June", "July",
             this.SaveData(object.Note)
             document.getElementById("lightbox2").setAttribute("data-id","")
         }//正常模式
-        else if (title.value != null){
+        else if (title.value !== null){
             // console.log("新增模式")
             let temp = {
                 year: tempYear,
@@ -257,7 +257,7 @@ let monthData = ["January", "February", "March", "April", "May", "June", "July",
     lightbox1.classList.add("fade")
     lightbox2.classList.remove("fade")
     lightbox2.classList.add("show")
-    if(id != null){
+    if(id !== null){
         lightbox2.setAttribute("data-id",id);
     }
     let newSize = [commonContent.scrollHeight,commonContent.scrollWidth]
@@ -334,7 +334,7 @@ let monthData = ["January", "February", "March", "April", "May", "June", "July",
                 let td = document.getElementById(`${x.year}-${x.month+1}-${x.date}`)
                 // console.log("td",td)
                 let tdbody = td.querySelector(".daygrid-day-events")
-                if (tdbody!=null){
+                if (tdbody!== null){
                     let newItem = `
                     <div class="daygrid-event">
                         <div class="daygrid-event-dot"></div>
