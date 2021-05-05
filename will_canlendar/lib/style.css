@@ -1,0 +1,303 @@
+body{
+        margin: 40px 10px;
+        padding: 0;
+        font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+        font-size: 14px;
+        position: relative;
+}
+.mc *,
+.mc *:before,
+.mc *:after{
+    box-sizing: border-box;
+}
+/* utility */
+.u-df{
+    display: flex;
+}
+.u-db{
+    display: block;
+}
+#mc{
+    width: 1100px;
+    margin: 0 auto;
+}
+.mc {
+    display: flex;
+    flex-direction: column;
+}
+.toolbar{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.header-toolbar{
+    margin-bottom: 1.5em; 
+}
+.button{
+    display:inline-block; 
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent; 
+    border: 1px solid transparent;
+    padding: .4em .65em;
+    font-size: 1em;
+    line-height: 1.5;
+    border-radius: .25em;
+}
+.button-primary{
+    color: #fff;
+    background-color: #2C3E50;
+    border-color: #2C3E50;
+}
+.button-disable{
+    color: #fff;
+    background-color:#cfd2d8;
+    border-color: #cfd2d8;
+}
+.mc .button-group{ 
+    display: inline-flex;
+    /* 加了這一行才部會錯位，為何 */
+    vertical-align: middle;
+}
+/* 個別按鈕圓角 */
+.mc .button-group > .button:not(:first-child){
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.mc .button-group > .button:not(:last-child){
+    margin-left: -1px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.mc .toolbar-title{
+    font-size: 1.75em;
+    margin: 0;
+}
+/* 表格 */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.table th{
+    padding: .75rem;
+}
+.table-bordered {
+    border: 1px solid #ddd;
+}
+.table td{
+    border: 1px solid #ddd;
+    
+}
+table .day-other{
+    opacity: 0.3;
+}
+.day-grid-day-top{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.day-grid-day-number{
+    padding: 4px;
+}
+.daygrid-day-events{
+    min-height: 7em;
+    max-height: 98px;
+    overflow: scroll;
+    padding: 0 5px;
+}
+.daygrid-day-frame{
+    min-height: 100%
+}
+/* mask */
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+.backdrop.show{
+    opacity: .5;
+}
+.backdrop.fade{
+    opacity: 0;
+    display: none;
+}
+/* 暫時給隱藏list內容用 */
+.fade{
+    opacity: 0;
+    display: none;  
+}
+/* light-box */
+.lightbox *,
+.lightbox *:before,
+.lightbox *:after{
+    box-sizing: border-box;
+}
+/* 共用光箱背景 */
+#commonLightbox{
+    height: auto;
+    width: auto;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1050;
+    transition: all 1s ease-out;
+    margin: 100px auto;
+    visibility: hidden;
+}
+.lightbox{
+       
+    /* outline: 0;
+    overflow: hidden; */
+}
+.lightbox.fade{
+    display: none;
+}
+.lightbox.show{
+    display: block;
+}
+
+
+.l-dialog{
+    width: 500px;
+    max-width: 500px;
+    height: 100%;
+    position: relative;
+    margin: 1.75rem auto;
+}
+/* 第二光箱 */
+.lightboxWriteDetail{
+    
+}
+.l-content{
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.l-header{
+    padding: 1rem 1rem;
+    text-align: center;
+}
+.l-list{
+    padding: 15px 20px;
+    min-height: 200px;
+    max-height: 300px;
+    overflow: scroll;
+}
+
+.l-footer{
+    height: 100%;
+    text-align: center;
+    padding: 15px 20px;
+}
+.l-title{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+
+}
+.l-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+.inputContent textarea{
+    resize: none;
+}
+/* addNew btn*/
+.addNew:link,
+.addNew:visited{
+    text-decoration: none;
+    color: #fff;
+    background-color: #2C3E50;
+    padding: 16px 36px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.1s ease 
+
+}
+.addNew:focus{
+    box-shadow: 0 0 0 0.2rem rgb(76 91 106 / 50%);
+}
+.addNew:hover{
+    background-color: #1e2b37;
+}
+/* item */
+.item{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 17px 0;
+}
+.item p{
+    margin: 0;
+}
+.item .itemInfo{
+    display: flex;
+}
+.itemInfo .checkbox{
+
+}
+.itemInfo .checkbox:checked{
+    
+}
+
+.item .button-group{
+
+}
+.item .edit{
+    cursor: pointer;
+
+}
+.item .delete{
+    margin-left: 20px;
+    cursor: pointer;
+}
+.item.demo{
+    background-color: rgba(255, 252, 199,.3);
+}
+.item .button-group{
+    display: flex;
+}
+
+.daygrid-day-frame{
+} 
+/* 第二光箱 */
+.inputTitle{
+    display: block;
+    margin-bottom: 15px;
+}
+.inputContent{
+    display: block;
+    margin-bottom: 15px;
+}
+.lightboxWriteDetail input,textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+/* 日曆 */
+.daygrid-event-dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #3788d8;
+    display: inline-block;
+}
+.fc-event-title{
+    display: inline-flex;
+}
